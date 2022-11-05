@@ -1,0 +1,265 @@
+.clearfix {
+    *zoom: 1;
+
+    &:before, &:after {
+        display: table;
+        content: "";
+        // Fixes Opera/contenteditable bug:
+        // http://nicolasgallagher.com/micro-clearfix-hack/#comment-36952
+        line-height: 0;
+    }
+
+    &:after {
+        clear: both;
+    }
+}
+
+body {
+    background: #f8f8f8;
+}
+
+.hand-cursor {
+    cursor: url(../img/UI/cursors/hand-point.png), auto;
+}
+
+.game-wrapper {
+    font-family: sans-serif;
+    width: 800px;
+    border: 1px solid #ddd;
+    height: 600px;
+    margin: 0 auto;
+    .clearfix;
+    .hand-cursor;
+    position: relative;
+    text-shadow: 0 1px 1px #000;
+}
+
+.hud {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    .clearfix();
+    width: 100%;
+    background: url("../img/UI/hud.png") no-repeat;
+    height: 106px;
+
+    .hp-bar {
+        position: absolute;
+        left: 8px;
+        bottom: 40px;
+        width: 36px;
+        height: 66px;
+
+        .value {
+            background: url("../img/UI/hpbar.png") no-repeat bottom left;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+
+    .mp-bar {
+        position: absolute;
+        left: 43px;
+        bottom: 40px;
+        width: 40px;
+        height: 66px;
+
+        .value {
+            background: url("../img/UI/mpbar.png") no-repeat bottom left;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+        }
+    }
+
+    .exp-bar {
+        position: absolute;
+        right: 5px;
+        bottom: 18px;
+        width: 16px;
+        height: 76px;
+
+        .value {
+            background: url("../img/UI/expbar.png") no-repeat bottom left;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+        }
+    }
+
+    .bagweight-bar {
+        position: absolute;
+        right: 30px;
+        bottom: 23px;
+        width: 16px;
+        height: 64px;
+
+        .value {
+            background: url("../img/UI/bagweightbar.png") no-repeat bottom left;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+        }
+    }
+
+
+    .stamina-bar {
+        position: absolute;
+        right: 54px;
+        bottom: 27px;
+        width: 16px;
+        height: 54px;
+
+        .value {
+            background: url("../img/UI/staminabar.png") no-repeat bottom left;
+            position: absolute;
+            width: 100%;
+            bottom: 0;
+            left: 0;
+            height: 100%;
+        }
+    }
+
+    .hud-toolbar {
+        position: absolute;
+        width: 39px;
+        bottom: 92px;
+        right: 0;
+        height: 46px;
+
+        .hud-toolbar-toggle {
+            width: 100%;
+            float: right;
+            position: relative;
+            height: 46px;
+            background: url("../img/UI/hud-toolbar-toggle.png") no-repeat top right;
+            font-size: 0;
+            text-indent: -9999px;
+            display: block;
+        }
+
+        .hud-toolbar-nav {
+            width: 22px;
+            height: 155px;
+            position: absolute;
+            top: 36px;
+            right: 6px;
+            display: none;
+
+            button {
+                background: url("../img/UI/hud-toolbar-nav.png") no-repeat bottom left;
+                display: block;
+                clear: both;
+                width: 20px;
+                height: 20px;
+                margin-bottom: 8px;
+                border: none;
+                padding: 0;
+                font-size: 0;
+                text-indent: -9999px;
+                background-position: -100% - 100%;
+                .hand-cursor;
+               
+
+                &.hud-toolbar-battle {
+                    &:hover {
+                        background-position: 0 0;
+                    }
+
+                    &:active {
+                        background-position: -22px 0px;
+                    }
+                    &.battle{ background-position: 0 -155px;}
+                    &.pk{ background-position: -22px -155px; }
+                    &.battle, &.pk{
+                          &:active {
+                            background-position: -22px 0px;
+                          }
+                    }
+                }
+
+                &.hud-toolbar-character {
+                    &:hover {
+                        background-position: 1px -22px;
+                    }
+
+                    &:active {
+                        background-position: -21px -22px;
+                    }
+                }
+
+                &.hud-toolbar-inventory {
+                    &:hover {
+                        background-position: 1px -89px;
+                    }
+
+                    &:active {
+                        background-position: -21px 0 -89px;
+                    }
+                }
+
+                &.hud-toolbar-chat {
+                    &:hover {
+                        background-position: 1px -46px;
+                    }
+
+                    &:active {
+                        background-position: -21px -46px;
+                    }
+                }
+
+                &.hud-toolbar-magic {
+                    &:hover {
+                        background-position: 1px -113px;
+                    }
+
+                    &:active {
+                        background-position: -21px -113px;
+                    }
+                }
+
+                &.hud-toolbar-option {
+                    &:hover {
+                        background-position: 1px -69px;
+                    }
+
+                    &:active {
+                        background-position: -21px -69px;
+                    }
+                }
+
+                &.hud-toolbar-help {
+                    &:hover {
+                        background-position: 1px -135px;
+                    }
+
+                    &:active {
+                        background-position: -22px -135px;
+                    }
+                }
+            }
+        }
+
+
+
+        &.active {
+            background: url("../img/UI/hud-toolbar.png") no-repeat top left;
+            height: 236px;
+
+            .hud-toolbar-toggle {
+                background-position: top left;
+            }
+
+            .hud-toolbar-nav {display: block;            }
+        }
+    }
+}

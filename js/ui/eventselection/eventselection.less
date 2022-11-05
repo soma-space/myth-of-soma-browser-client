@@ -1,0 +1,48 @@
+// out: ./eventselection.css, sourcemap: false, compress: true
+@import "../lesshat.less";
+
+.overlay {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  width: 100%;
+  height: 100%;
+  z-index: 200;
+
+  #event-selection {
+    position: absolute;
+    left: 183px;
+    top: 70px;
+    width: 435px;
+    height: 131px;
+    background: url("js/ui/eventselection/images/eventwindow.png");
+    color: #FFF;
+    font-size: 12px;
+    font-family: sans-serif;
+    &:hover {
+      cursor: default;
+    }
+    .content {
+      position: absolute;
+      left: 53px;
+      top: 35px;
+      width: 337px;
+      height: 70px;
+      white-space: break-word;
+      overflow-y:auto;
+      outline: 0;
+      line-height: 14px;
+      .user-select(none);
+      .selection {
+        display: table;
+        margin-bottom: 2px;
+      }
+      div:hover {
+        cursor: default;
+      }
+      .selection:hover {
+        background-color: black;
+      }
+    }
+  }
+}

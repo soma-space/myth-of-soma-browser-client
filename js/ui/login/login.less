@@ -1,0 +1,125 @@
+// out: ./login.css, sourcemap: false, compress: true
+@import "../lesshat.less";
+@import "../mixins.less";
+
+@images: "js/ui/login/images";
+
+#login {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 800px;
+  height: 600px;
+  background: url("@{images}/loginwindow.png") no-repeat;
+  font-family: sans-serif;
+
+  .animated-area {
+    position: absolute;
+    left: 107px;
+    top: 0;
+    width: 582px;
+    height: 252px;
+    background: url("@{images}/loginwindowanimation.png") no-repeat;
+    @keyframes backgroundAnimation {
+      100% {
+        background-position: 0 -756px;
+      }
+    }
+    .animation(backgroundAnimation 0.375s steps(3, end) infinite);
+  }
+
+  input {
+    position: absolute;
+    border: none;
+    outline: none;
+    padding: 0;
+    margin: 0;
+    background-color: transparent;
+    color: #FFF;
+    font-size: 14px;
+
+    &.username {
+      left: 283px;
+      top: 385px;
+      width: 135px;
+      height: 20px;
+    }
+    &.password {
+      left: 283px;
+      top: 436px;
+      width: 135px;
+      height: 20px;
+    }
+  }
+
+  button {
+    position: absolute;
+    border: none;
+    outline: none;
+    padding: 0;
+    background-image: inherit;
+    .hide-text();
+
+    &.ok {
+      background-position: -450px -384px;
+      left: 450px;
+      top: 384px;
+      width: 68px;
+      height: 23px;
+      &:hover {
+        background-position: -2px -602px;
+      }
+      &:active {
+        background-position: -72px -602px;
+      }
+    }
+
+    &.cancel {
+       background-position: -450px -435px;
+       left: 450px;
+       top: 435px;
+       width: 68px;
+       height: 23px;
+       &:hover {
+        background-position: -2px -627px;
+       }
+       &:active {
+         background-position: -72px -627px;
+       }
+    }
+
+    &.register {
+      background-position: -290px -477px;
+      left: 290px;
+      top: 477px;
+      width: 109px;
+      height: 22px;
+      &:hover {
+        background-position: -2px -677px;
+        width: 108px;
+      }
+      &:active {
+        background-position: -2px -652px;
+        width: 108px;
+      }
+    }
+
+    &.account {
+      background-position: -412px -477px;
+      left: 412px;
+      top: 477px;
+      width: 109px;
+      height: 22px;
+      &:hover {
+        background-position: -113px -677px;
+        width: 108px;
+        left: 413px;
+      }
+      &:active {
+        background-position: -113px -652px;
+        width: 108px;
+        left: 413px;
+      }
+    }
+  }
+}

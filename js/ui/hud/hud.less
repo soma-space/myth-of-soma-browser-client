@@ -1,0 +1,223 @@
+// out: ./hud.css, sourcemap: false, compress: true
+@import "../lesshat.less";
+@import "../mixins.less";
+
+@images: "js/ui/hud/images";
+
+.hud {
+  position: absolute;
+  top: 494px;
+  left: 0;
+  .clearfix();
+  width: 800px;
+  height: 106px;
+  background: url("@{images}/hud.png") no-repeat;
+
+  .hp-bar {
+    position: absolute;
+    left: 8px;
+    bottom: 40px;
+    width: 36px;
+    height: 66px;
+    .value {
+      background: url("@{images}/hpbar.png") no-repeat bottom left;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  .mp-bar {
+    position: absolute;
+    left: 43px;
+    bottom: 40px;
+    width: 40px;
+    height: 66px;
+    .value {
+      background: url("@{images}/mpbar.png") no-repeat bottom left;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      height: 100%;
+    }
+  }
+
+  .exp-bar {
+    position: absolute;
+    right: 5px;
+    bottom: 18px;
+    width: 16px;
+    height: 76px;
+    .value {
+      background: url("@{images}/expbar.png") no-repeat bottom left;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      height: 100%;
+    }
+  }
+
+  .bagweight-bar {
+    position: absolute;
+    right: 30px;
+    bottom: 23px;
+    width: 16px;
+    height: 64px;
+    .value {
+      background: url("@{images}/bagweightbar.png") no-repeat bottom left;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      height: 100%;
+    }
+  }
+
+  .stamina-bar {
+    position: absolute;
+    right: 54px;
+    bottom: 27px;
+    width: 16px;
+    height: 54px;
+    .value {
+      background: url("@{images}/staminabar.png") no-repeat bottom left;
+      position: absolute;
+      width: 100%;
+      bottom: 0;
+      left: 0;
+      height: 100%;
+    }
+  }
+
+  .hud-toolbar {
+    position: absolute;
+    width: 39px;
+    bottom: 92px;
+    right: 0;
+    height: 46px;
+
+    .hud-toolbar-toggle {
+      width: 100%;
+      float: right;
+      position: relative;
+      height: 46px;
+      background: url("@{images}/hud-toolbar-toggle.png") no-repeat top right;
+      display: block;
+      .hide-text();
+    }
+
+    .hud-toolbar-nav {
+      width: 22px;
+      height: 155px;
+      position: absolute;
+      top: 36px;
+      right: 6px;
+      display: none;
+
+      button {
+        background: url("@{images}/hud-toolbar-nav.png") no-repeat bottom left;
+        display: block;
+        clear: both;
+        width: 20px;
+        height: 20px;
+        margin-bottom: 8px;
+        border: none;
+        outline: none;
+        padding: 0;
+        background-position: -100% - 100%;
+        .hide-text();
+
+        &.hud-toolbar-battle {
+          &:hover {
+            background-position: 0 0;
+          }
+          &:active {
+            background-position: -22px 0px;
+          }
+          &.battle {
+            background-position: 0 -155px;
+          }
+          &.pk {
+            background-position: -22px -155px;
+          }
+          &.battle, &.pk {
+            &:active {
+              background-position: -22px 0px;
+            }
+          }
+        }
+
+        &.hud-toolbar-character {
+          &:hover {
+            background-position: 1px -22px;
+          }
+          &:active {
+            background-position: -21px -22px;
+          }
+        }
+
+        &.hud-toolbar-inventory {
+          &:hover {
+            background-position: 1px -89px;
+          }
+          &:active {
+            background-position: -21px -89px;
+          }
+        }
+
+        &.hud-toolbar-chat {
+          &:hover {
+            background-position: 1px -46px;
+          }
+          &:active {
+            background-position: -21px -46px;
+          }
+        }
+
+        &.hud-toolbar-magic {
+          &:hover {
+            background-position: 1px -113px;
+          }
+          &:active {
+            background-position: -21px -113px;
+          }
+        }
+
+        &.hud-toolbar-option {
+          &:hover {
+            background-position: 1px -69px;
+          }
+          &:active {
+            background-position: -21px -69px;
+          }
+        }
+
+        &.hud-toolbar-help {
+          &:hover {
+              background-position: 1px -135px;
+          }
+          &:active {
+              background-position: -22px -135px;
+          }
+        }
+      }
+    }
+
+    &.active {
+      background: url("@{images}/hud-toolbar.png") no-repeat top left;
+      height: 236px;
+
+      .hud-toolbar-toggle {
+        background-position: top left;
+      }
+
+      .hud-toolbar-nav {
+        display: block;
+      }
+    }
+  }
+}

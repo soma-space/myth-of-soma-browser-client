@@ -1,0 +1,245 @@
+// out: ./charselect.css, sourcemap: false, compress: true
+@import "../lesshat.less";
+@import "../mixins.less";
+
+@images: "js/ui/charselect/images";
+
+#char-select {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 800px;
+  height: 600px;
+  background: url("@{images}/characterselectwindow.png") no-repeat;
+  font-family: sans-serif;
+
+  canvas {
+    position: absolute;
+    width: 128px;
+    height: 256px;
+    &.slot1 {
+      // centre character (currently selected)
+      left: 375px;
+      top: 160px;
+    }
+    &.slot2 {
+      // top-right character
+      left: 575px;
+      top: 80px;
+    }
+    &.slot3 {
+      // top-left character
+      left: 185px;
+      top: 80px;
+    }
+  }
+
+  .char-info {
+    position: absolute;
+    width: 800px;
+    height: 600px;
+    font-size: 12px;
+    color: #FFF;
+    text-align: right;
+    .left-area() {
+      position: absolute;
+      left: 183px;
+      width: 100px;
+      height: 14px;
+    }
+    .middle-area() {
+      position: absolute;
+      left: 389px;
+      width: 98px;
+      height: 14px;
+    }
+    .right-area() {
+      position: absolute;
+      left: 591px;
+      width: 105px;
+      height: 14px;
+    }
+    .name {
+      .left-area();
+      top: 440px;
+    }
+    .guild {
+      .left-area();
+      top: 461px;
+    }
+    .age {
+      .left-area();
+      top: 483px;
+    }
+    .position {
+      .left-area();
+      top: 506px;
+    }
+    .moral {
+      .left-area();
+      top: 530px;
+    }
+    .level {
+      .left-area();
+      top: 552px;
+    }
+    .health {
+      .middle-area();
+      top: 440px;
+    }
+    .mana {
+      .middle-area();
+      top: 461px;
+    }
+    .stamina {
+      .middle-area();
+      top: 484px;
+    }
+    .main-weapon {
+      .middle-area();
+      top: 507px;
+    }
+    .main-skill {
+      .middle-area();
+      top: 529px;
+    }
+    .strength {
+      .right-area();
+      top: 440px;
+    }
+    .intelligence {
+      .right-area();
+      top: 462px;
+    }
+    .dexterity {
+      .right-area();
+      top: 484px;
+    }
+    .wisdom {
+      .right-area();
+      top: 508px;
+    }
+    .charisma {
+      .right-area();
+      top: 529px;
+    }
+    .constitution {
+      .right-area();
+      top: 551px;
+    }
+  }
+
+  button {
+    position: absolute;
+    border: none;
+    outline: none;
+    padding: 0;
+    background-image: inherit;
+    .hide-text();
+    &.ok {
+      background-position: -575px -406px;
+      left: 575px;
+      top: 406px;
+      width: 56px;
+      height: 20px;
+      &:hover {
+        background-position: -592px -657px;
+      }
+      &:active {
+        background-position: -592px -679px;
+      }
+    }
+    &.exit {
+      background-position: -646px -406px;
+      left: 646px;
+      top: 406px;
+      width: 55px;
+      height: 20px;
+      &:hover {
+        background-position: -671px -657px;
+      }
+      &:active {
+        background-position: -671px -679px;
+      }
+    }
+    &.human-world {
+      background-position: -117px -406px;
+      left: 117px;
+      top: 406px;
+      width: 107px;
+      height: 20px;
+      &:hover {
+        background-position: -380px -603px;
+      }
+      &:active {
+        background-position: -379px -625px;
+        width: 105px;
+      }
+    }
+    &.devil-world {
+      background-position: -240px -406px;
+      left: 240px;
+      top: 406px;
+      width: 91px;
+      height: 20px;
+      &:hover {
+        background-position: -500px -603px;
+      }
+      &:active {
+        background-position: -500px -625px;
+      }
+    }
+    &.delete {
+      background-position: -471px -406px;
+      left: 471px;
+      top: 406px;
+      width: 65px;
+      height: 20px;
+      &:hover {
+        background-position: -683px -603px;
+      }
+      &:active {
+        background-position: -683px -625px;
+      }
+    }
+    &.select-server {
+      background-position: -361px -379px;
+      left: 361px;
+      top: 379px;
+      width: 111px;
+      height: 20px;
+      &:hover {
+        background-position: -477px -657px;
+      }
+      &:active {
+        background-position: -478px -679px;
+      }
+    }
+    &.arrow-left {
+      background-position: -288px -326px;
+      left: 288px;
+      top: 326px;
+      width: 48px;
+      height: 43px;
+      &:hover {
+        background-position: -439px -722px;
+      }
+      &:active {
+        background-position: -489px -722px;
+      }
+    }
+    &.arrow-right {
+      background-position: -492px -326px;
+      left: 492px;
+      top: 326px;
+      width: 51px;
+      height: 43px;
+      &:hover {
+        background-position: -595px -722px;
+      }
+      &:active {
+        background-position: -541px -722px;
+      }
+    }
+  }
+}

@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+		<title>Myth of Soma Browser Client</title>
+		<script>
+			addEventListener('message', function () {
+				return function onMessage(event) {
+					removeEventListener('message', onMessage, false);
+					
+					var app = document.createElement('script');
+					app.src = 'js/lib/require.js';
+					app.setAttribute('data-main', 'js/app.js');
+					document.getElementsByTagName('head')[0].appendChild(app);
+					event.source.postMessage('ready', '*');
+				};
+			}(), false);
+		</script>
+	</head>
+</html>

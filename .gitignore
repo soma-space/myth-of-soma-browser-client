@@ -1,0 +1,8 @@
+jspm_packages/**
+node_modules/**
+notes/**
+.jsbeautifyrc
+npm-debug.log
+resources/**
+*.css
+js/_old_/**
